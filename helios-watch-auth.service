@@ -1,0 +1,8 @@
+[Unit]
+Description=Detection des echecs SSH repetes et blocage de la source
+Wants=firewalld.service
+After=firewalld.service sshd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/helios-watch-auth.sh
